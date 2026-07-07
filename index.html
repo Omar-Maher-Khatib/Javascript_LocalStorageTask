@@ -27,27 +27,17 @@
             <input type="password" id="password" name="password" required>
         </div>
 
-        <table border="1" cellpadding="6" cellspacing="0">
-            <tr>
-                <th>Field</th>
-                <th>Value</th>
-            </tr>
-            <tr>
-                <td>URL</td>
-                <td>Enter a website address</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Enter your name</td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td>Enter your email</td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td>Enter your password</td>
-            </tr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">url</th>
+                    <th scope="col">site name</th>
+                    <th scope="col">email</th>
+                    <th scope="col">password</th>
+                </tr>
+            </thead>
+            <tbody class="data">
+            </tbody>
         </table>
 
         <button type="submit">Submit</button>
