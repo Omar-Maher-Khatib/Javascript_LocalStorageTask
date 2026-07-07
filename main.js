@@ -1,6 +1,9 @@
-const sites = [];
-const bookMarkForm = document.forms.BookMarkForm;
+const bookMarkForm = document.forms['BookMarkForm'];
+let sites = [];
 
+if(localStorage.getItem("sites") != null) {
+    sites = JSON.parse(localStorage.getItem("sites"));
+}
 bookMarkForm.onsubmit = (e) => {
 	e.preventDefault();
 
@@ -17,3 +20,11 @@ bookMarkForm.onsubmit = (e) => {
 	localStorage.setItem("sites", JSON.stringify(sites));
 	bookMarkForm.reset();
 };
+
+const displaySites = () => {
+    console.log(sites);
+}
+
+displaySites();
+
+
