@@ -15,16 +15,23 @@ bookMarkForm.onsubmit = (e) => {
 	};
 
 	sites.push(site);
-	console.log(sites);
-
 	localStorage.setItem("sites", JSON.stringify(sites));
+    displaySites();
 	bookMarkForm.reset();
 };
 
 const displaySites = () => {
-    console.log(sites);
+
+    const result= sites.map( (site) => {
+        return `<tr>
+                <td>${site.url}</td>
+                <td>${site.name}</td>
+                <td>${site.email}</td>
+                <td>${site.password}</td>
+                </tr>
+                `
+    })
+    document.querySelector(".data").innerHTML = result;
 }
-
 displaySites();
-
 
