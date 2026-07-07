@@ -1,3 +1,4 @@
+// 1- Create : Write Sites in Local Storage
 const bookMarkForm = document.forms['BookMarkForm'];
 let sites = [];
 
@@ -13,13 +14,13 @@ bookMarkForm.onsubmit = (e) => {
 		email: bookMarkForm.email.value,
 		password: bookMarkForm.password.value,
 	};
-
 	sites.push(site);
 	localStorage.setItem("sites", JSON.stringify(sites));
     displaySites();
 	bookMarkForm.reset();
 };
 
+// 2- Read : Read Sites from Local Storage
 const displaySites = () => {
 
     const result= sites.map( (site) => {
@@ -28,7 +29,7 @@ const displaySites = () => {
                 <td>${site.name}</td>
                 <td>${site.email}</td>
                 <td>${site.password}</td>
-                <td><button onclick=deleteSite()>Delete</button></td>
+                <td><button onclick=deleteSite(this)>Delete</button></td>
                 </tr>
                 `
     }).join('');
@@ -37,7 +38,11 @@ const displaySites = () => {
 
 displaySites();
 
-const deleteSite = () => {
-    consol.log("delete");
+
+// 3- Delete : Delete Site from Local Storage
+const deleteSite = (index) => {
+    sites.splice(index,1);
+    localStorage.setItem("sites", JSON.stringify(sites));
+    displaySites(); 
 }
 
