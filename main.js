@@ -28,10 +28,16 @@ const displaySites = () => {
                 <td>${site.name}</td>
                 <td>${site.email}</td>
                 <td>${site.password}</td>
+                <td><button onclick=deleteSite()>Delete</button></td>
                 </tr>
                 `
-    })
+    }).join('');
     document.querySelector(".data").innerHTML = result;
 }
+
 displaySites();
+
+const deleteSite = () => {
+    consol.log("delete");
+}
 
